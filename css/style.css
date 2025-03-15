@@ -834,6 +834,27 @@ section{
 
 }
 
+.checkout-btn {
+    display: block;
+    width: 100%; /* Ocupă toată lățimea containerului */
+    padding: 15px;
+    text-align: center;
+    background-color: #28a745; /* Culoare verde */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.checkout-btn:hover {
+    background-color: #218838; /* Culoare verde mai închisă */
+    transform: scale(1.05);
+}
+
+
 
 
 
