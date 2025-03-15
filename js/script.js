@@ -100,7 +100,7 @@ const products = [
         id:1,
         quantity: 0,
         image: "images/arm.jpeg",
-        title: "Arm Bionic",
+        title: "Bionic Arm",
         description: "A modern, functional prosthetic with articulated fingers.",
         shortDescription: "High-tech prosthetic arm with flexible movement.",
         price: 1299.99,
@@ -110,74 +110,91 @@ const products = [
         id:2,
         quantity: 0,
         image: "images/ECG-monitor.jpeg",
-        title: "ECG monitor",
-        price: 15.99,
-        oldPrice: 20.99
+        title: "ECG Monitor",
+        price: 399.99,
+        oldPrice: 499.99
     },
     {
         id:3,
         quantity: 0,
-        image: "images/background3.jpg",
-        title: "Tasty and Healthy",
-        price: 15.99,
-        oldPrice: 20.99
+        image: "images/Pill dispenser.jpeg",
+        title: "Pill Dispenser",
+        price: 99.99,
+        oldPrice: 129.99
     },
     {
         id:4,
         quantity: 0,
-        image: "images/background3.jpg",
-        title: "Tasty and Healthy",
-        price: 15.99,
-        oldPrice: 20.99
+        image: "images/aeorosol.jpeg",
+        title: "Smart Inhaler",
+        price: 59.99,
+        oldPrice: 89.99
     },
     {
         id:5,
         quantity: 0,
-        image: "images/background3.jpg",
-        title: "Tasty and Healthy",
-        price: 15.99,
-        oldPrice: 20.99
+        image: "images/auditiv.jpeg",
+        title: "Hearing Aid",
+        price: 159.99,
+        oldPrice: 189.99
     },
     {
         id:6,
         quantity: 0,
-        image: "images/background3.jpg",
-        title: "Tasty and Healthy",
-        price: 15.99,
-        oldPrice: 20.99
+        image: "images/siringa.jpeg",
+        title: "Laparoscopic Surgical Instrument",
+        price: 79.99,
+        oldPrice: 129.99
     },
     {
         id:7,
         quantity: 0,
-        image: "images/background3.jpg",
-        title: "Tasty and Healthy",
-        price: 15.99,
-        oldPrice: 20.99
+        image: "images/vape.jpeg",
+        title: "Modern Portable Nebulizer",
+        price: 39.99,
+        oldPrice: 54.99
     },
     {
         id:8,
         quantity: 0,
-        image: "images/background3.jpg",
-        title: "Tasty and Healthy",
-        price: 15.99,
-        oldPrice: 20.99
+        image: "images/pen.jpeg",
+        title: "Reusable Insulin Pen",
+        price: 299.99,
+        oldPrice: 349.99
     },
     {
         id:9,
         quantity: 0,
-        image: "images/background3.jpg",
-        title: "Tasty and Healthy",
-        price: 15.99,
-        oldPrice: 20.99
+        image: "images/scop.jpeg",
+        title: "Manual Stethoscope",
+        price: 20.99,
+        oldPrice: 24.99
     },
     {
         id:10,
         quantity: 0,
-        image: "images/background3.jpg",
-        title: "Tasty and Healthy",
+        image: "images/ciocan.jpeg",
+        title: "Reflex Hammer",
         price: 15.99,
         oldPrice: 20.99
-    }
+    },
+    {
+        id:11,
+        quantity: 0,
+        image: "images/pill.jpeg",
+        title: "Smart Pill",
+        price: 69.99,
+        oldPrice: 89.99
+    },
+
+    {
+        id:12,
+        quantity: 0,
+        image: "images/heart.jpeg",
+        title: "Wireless Pacemaker",
+        price: 199.99,
+        oldPrice: 229.99
+    },
 ];
 
 function renderProducts() {
