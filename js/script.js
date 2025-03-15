@@ -97,60 +97,70 @@ async function sendMessage(event) {
 }
 const products = [
     {
+        id:1,
         image: "images/background3.jpg",
         title: "Tasty and Healthy",
         price: 15.99,
         oldPrice: 20.99
     },
     {
+        id:2,
         image: "images/background3.jpg",
         title: "Tasty and Healthy",
         price: 15.99,
         oldPrice: 20.99
     },
     {
+        id:3,
         image: "images/background3.jpg",
         title: "Tasty and Healthy",
         price: 15.99,
         oldPrice: 20.99
     },
     {
+        id:4,
         image: "images/background3.jpg",
         title: "Tasty and Healthy",
         price: 15.99,
         oldPrice: 20.99
     },
     {
+        id:5,
         image: "images/background3.jpg",
         title: "Tasty and Healthy",
         price: 15.99,
         oldPrice: 20.99
     },
     {
+        id:6,
         image: "images/background3.jpg",
         title: "Tasty and Healthy",
         price: 15.99,
         oldPrice: 20.99
     },
     {
+        id:7,
         image: "images/background3.jpg",
         title: "Tasty and Healthy",
         price: 15.99,
         oldPrice: 20.99
     },
     {
+        id:8,
         image: "images/background3.jpg",
         title: "Tasty and Healthy",
         price: 15.99,
         oldPrice: 20.99
     },
     {
+        id:9,
         image: "images/background3.jpg",
         title: "Tasty and Healthy",
         price: 15.99,
         oldPrice: 20.99
     },
     {
+        id:10,
         image: "images/background3.jpg",
         title: "Tasty and Healthy",
         price: 15.99,
@@ -191,28 +201,82 @@ function addToCart(index) {
 function updateCartUI() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let cartContainer = document.querySelector(".cart-items-container");
+
     if (!cartContainer) {
         cartContainer = document.createElement("div");
         cartContainer.classList.add("cart-container");
         document.body.appendChild(cartContainer);
     }
+
     cartContainer.innerHTML = "<h2>Cart</h2>";
-    cart.forEach((item, index) => {
-        cartContainer.innerHTML += `
-            <div class="cart-item">
-                <h4>${item.title}</h4>
-                <p>$${item.price}</p>
-                <button onclick="removeFromCart(${index})">Remove</button>
-            </div>
-        `;
+
+    // Obiect pentru a grupa produsele după ID
+    let groupedCart = {};
+
+    cart.forEach((item) => {
+        if (groupedCart[item.id]) {
+            groupedCart[item.id].quantity++;
+        } else {
+            groupedCart[item.id] = { ...item, quantity: 1 };
+        }
+    });
+
+    // Convertim obiectul într-un array și generăm UI-ul
+    Object.values(groupedCart).forEach((item) => {
+        let cartItem = document.createElement("div");
+        cartItem.classList.add("cart-item");
+
+        let title = document.createElement("h4");
+        title.textContent = `${item.title} (x${item.quantity})`;
+
+        let price = document.createElement("p");
+        price.textContent = `$${item.price * item.quantity}`; // Afișează prețul total
+
+        let removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.style.backgroundColor = "red";
+        removeButton.style.color = "black";
+        removeButton.style.border = "none";
+        removeButton.style.borderRadius = "12px";
+        removeButton.style.padding = "8px 12px";
+        removeButton.style.cursor = "pointer";
+        removeButton.style.fontWeight = "bold";
+        removeButton.style.transition = "all 0.3s ease";
+
+        // Efect hover pe buton
+        removeButton.onmouseover = function () {
+            removeButton.style.transform = "scale(1.1)";
+            removeButton.style.backgroundColor = "darkred";
+        };
+
+        removeButton.onmouseleave = function () {
+            removeButton.style.transform = "scale(1)";
+            removeButton.style.backgroundColor = "red";
+        };
+
+        removeButton.onclick = function () {
+            removeFromCart(item.id);
+        };
+
+        cartItem.appendChild(title);
+        cartItem.appendChild(price);
+        cartItem.appendChild(removeButton);
+
+        cartContainer.appendChild(cartItem);
     });
 }
 
-function removeFromCart(index) {
+// 🗑️ Funcție pentru a elimina produsele din coș
+function removeFromCart(productId) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.splice(index, 1);
+
+    // Găsește primul produs cu acel ID și scade cantitatea
+    let index = cart.findIndex((item) => item.id === productId);
+    if (index !== -1) {
+        cart.splice(index, 1);
+    }
+
     localStorage.setItem("cart", JSON.stringify(cart));
     updateCartUI();
 }
-
 

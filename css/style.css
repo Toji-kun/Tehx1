@@ -12,10 +12,11 @@
     font-family: 'Roboto',sans-serif;
     margin: 0;padding: 0;
     box-sizing: border-box;
-    outline: none; border: none;
-    text-decoration: none;
-    text-transform: capitalize;
+    outline:#13131a ; 
+    text-decoration:solid;
+    text-transform:var(--border) ;
     transition: .2s linear;
+    
 }
 
 html{
@@ -218,28 +219,35 @@ section{
 .header .cart-items-container{
     position: absolute;
     top: 100%; right: -100%;
-    height: calc(100vh - 9.5rem);
-    width: 35rem;
+    height: calc(100vh - 9rem);
+    width: 30rem;
     background: #fff;
-    padding:0 1.5rem;
+    padding:0 1rem;
 }
 
 .header .cart-items-container.active{
     right: 0;
 }
+.header .cart-items-container.active h2{
+    font-size: 30px;
+}
 
 .header .cart-items-container .cart-item{
+    font-size:15px;
     position: relative;
     margin:2rem 0;
     display: flex;
     align-items: center;
-    gap:1.5rem;
+    gap:2rem;
 }
 
+
+
 .header .cart-items-container .cart-item .fa-times{
+    width: 20px;
     position: absolute;
     top: 1rem; right: 1rem;
-    font-size: 2rem;
+    font-size: 100rem;
     cursor:pointer;
     color:var(--black);
 }
@@ -338,6 +346,20 @@ section{
     padding: 5rem;
     text-align: center;
     border: var(--border);
+}
+.menu .box-container .box:hover .btn {
+    background-color: #222; /* Culoare neagră la hover */
+    color: #fff; /* Text alb la hover */
+}
+
+/* Prețul vechi */
+.menu .box-container .box:hover .price span {
+    color: black; /* Culoare neagră la hover */
+}
+
+/* Dacă vrei să schimbi culoarea la hover și pentru prețul principal */
+.menu .box-container .box:hover .price {
+    color: black; /* Culoare albă pentru prețul actual */
 }
 
 .menu .box-container .box img{

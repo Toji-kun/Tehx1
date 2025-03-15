@@ -9,21 +9,34 @@ document.addEventListener("DOMContentLoaded", () => {
         cartTable.innerHTML = "";
         let total = 0;
 
-        cart.forEach((item, index) => {
+        let groupedCart = {};
+
+    cart.forEach((item) => {
+        if (groupedCart[item.id]) {
+            groupedCart[item.id].quantity++;
+        } else {
+            groupedCart[item.id] = { ...item, quantity: 1 };
+        }
+    });
+
+    // Convertim obiectul într-un array și generăm UI-ul
+    Object.values(groupedCart).forEach((item,index) => {
+
+    
             let row = document.createElement("tr");
             row.innerHTML = `
-                <td>${item.name}</td>
+                <td>${item.title}</td>
                 <td>$${item.price.toFixed(2)}</td>
                 <td>
                     <button class="decrease-qty" data-index="${index}">-</button>
                     ${item.quantity}
                     <button class="increase-qty" data-index="${index}">+</button>
                 </td>
-                <td>$${(item.price * item.quantity).toFixed(2)}</td>
+                <td>$${(item.price*item.quantity).toFixed(2)}</td>
                 <td><button class="remove-item" data-index="${index}">Remove</button></td>
             `;
 
-            total += item.price * item.quantity;
+            total += item.price;
             cartTable.appendChild(row);
         });
 
