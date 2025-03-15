@@ -37,6 +37,57 @@ html::-webkit-scrollbar-thumb{
     border-radius: 5rem;
 }
 
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #d3ad7f;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.chat-container {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 350px; /* Lățimea mărită */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.chat-header {
+    background: #d3ad7f;
+    padding: 15px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+.chat-messages {
+    height: 350px; /* Zona albă este acum mai mare */
+    overflow-y: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-top: 1px solid #ddd;
+    font-size: 16px;
+}
+
+
+
 body{
     background: var(--bg);
 }
@@ -84,17 +135,30 @@ section{
     z-index: 1000;
 }
 
+
+
+.car{
+    width: 70px;
+    height: 170px;
+    display: flex;
+    margin-top: 1px;
+    image-resolution: 100%;
+    align-items: center;
+    font-size: large;
+}
+
 .header .logo img{
     height: 6rem;
 }
 
 .header .navbar a{
-    margin:0 1rem;
-    font-size: 1.6rem;
+    margin:0 2rem;
+    font-size: 1.9rem;
     color: #fff;
 }
 
 .header .navbar a:hover{
+    opacity: 50%;
     color: var(--main-color);
     border-bottom: .1rem solid var(--main-color);
     padding-top: 5rem;
@@ -129,6 +193,8 @@ section{
 
 .header .search-form.active{  
     transform: scaleY(1);
+    border-radius: 500px;
+    border-top-left-radius: 50%;
 }
 
 .header .search-form input{
@@ -208,7 +274,7 @@ section{
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background:url(../images/background3.jpg) no-repeat;
+    background:url(https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHkyNzVtOXdtcG43ZXRybjFjbzZuYjJ3aGZ1ZXdkZzhqeXFuZHM5dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VGK2WUT3amXjG/giphy.gif) no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -530,7 +596,7 @@ section{
 }
 
 .footer .share{
-    padding: 1rem 0;
+    padding: -10rem 0;
 }
 
 .footer .share a{
@@ -652,6 +718,16 @@ section{
     }
 
 }
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width:450px){
 

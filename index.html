@@ -18,17 +18,17 @@
 <header class="header">
 
    <a href="#" class="logo">
-      <img src="images/logo.webp" alt="">
+      <img src="images/logo1.PNG" class="car">
    </a>
 
    <nav class="navbar">
-      <a href="#home">home</a>
-      <a href="#about">about</a>
-      <a href="#menu">menu</a>
-      <a href="#products">products</a>
-      <a href="#review">review</a>
-      <a href="#contact">contact</a>
-      <a href="#blogs">blogs</a>
+    <a href="./index.html">home</a>
+    <a href="./about.html">about</a>
+    <a href="./menu.html">menu</a>
+    <a href="./products.html">products</a>
+    <a href="./review.html">review</a>
+    <a href="./contact.html">contact</a>
+    <a href="./blogs.html">blogs</a>
 
    </nav>
 
@@ -82,6 +82,18 @@
 </header>
 
 
+<button class="chat-button" onclick="toggleChat()">💬 Chat AI</button>
+
+    <div class="chat-container" id="chatBox">
+        <div class="chat-header">
+            <h3>Chat AI</h3>
+            <button onclick="toggleChat()">✖</button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <input type="text" id="chatInput" placeholder="Scrie un mesaj..." onkeypress="sendMessage(event)">
+    </div>
+
+
 
 
 <!-- home section-->
@@ -128,6 +140,25 @@
 <section class="menu" id="menu">
 
      <h1 class="heading"> our <span>menu</span> </h1>
+
+     <nav>
+        <img src="./culinary.PNG" width="60px" height="60px" />
+        <div class="nav-left">
+            <a href="../Home/Atestat.html" class="anim1">Home</a>
+            <a href="../Home/recipes.html" class="anim1">Recipes</a>
+            <a href="../Home/cart.html" class="anim1">Cart (<span id="cart-count">0</span>)</a>
+        </div>
+        <div class="nav-right">
+            <a href="../Home/about.html" class="anim2">About Us</a>
+            <a href="../Home/contact.html" class="anim2">Contact</a>
+            <a href="../Home/login.html" class="anim2">Login</a>
+        </div>
+    </nav>
+    
+    <section class="products">
+        <div class="product-grid" id="product-list">
+           
+        </div>
 
      <div class="box-container">
 
