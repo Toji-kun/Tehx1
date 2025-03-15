@@ -436,6 +436,99 @@ section{
     font-size: 1.5rem;
 }
 
+.menu .box-container .box img,
+.products .box-container .box .image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.box {
+    background: #222;
+    padding: 2rem;
+    text-align: center;
+    border: 2px solid #444;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 10px;
+}
+
+.box img {
+    height: 12rem; /* Imagini mai mari */
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.box img:hover {
+    transform: scale(1.05); /* Efect subtil de mărire */
+}
+
+.box h3 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+.box .price {
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.box .price span {
+    color: #bbb;
+    font-size: 1.2rem;
+    text-decoration: line-through;
+}
+
+.box:hover {
+    background: #fff;
+    color: #222;
+}
+
+.box:hover h3,
+.box:hover .price,
+.box:hover .price span {
+    color: #222;
+}
+
+.box:hover .btn {
+    background: #222; /* Culoare neagră când hover pe întreaga box */
+    color: #fff; /* Text alb */
+    transform: scale(1.1); /* Mărire la hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    background: #fff; /* Culoare albă */
+    color: #222; /* Text negru */
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background: #222; /* Culoare neagră la hover */
+    color: #fff; /* Text alb */
+    transform: scale(1.1); /* Mărire la hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
 .review .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
@@ -587,6 +680,8 @@ section{
     color: #ccc;
     padding: 1rem 0;
 }
+
+
 
 .footer{
     background: var(--black);

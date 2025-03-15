@@ -54,7 +54,7 @@ function sendMessage(event) {
         }, 1000);
     }
 }
-const API_KEY = "AIzaSyAZqa8SymhYGehLRyJYqvYl5s3kHiKo3IA"; // Nu lăsa cheia API publică!
+const API_KEY = ""; // Nu lăsa cheia API publică!
 const model = "gemini-1.5-flash"; // Poți schimba modelul dacă vrei
 
 async function sendMessage(event) {
@@ -95,3 +95,124 @@ async function sendMessage(event) {
         }
     }
 }
+const products = [
+    {
+        image: "images/background3.jpg",
+        title: "Tasty and Healthy",
+        price: 15.99,
+        oldPrice: 20.99
+    },
+    {
+        image: "images/background3.jpg",
+        title: "Tasty and Healthy",
+        price: 15.99,
+        oldPrice: 20.99
+    },
+    {
+        image: "images/background3.jpg",
+        title: "Tasty and Healthy",
+        price: 15.99,
+        oldPrice: 20.99
+    },
+    {
+        image: "images/background3.jpg",
+        title: "Tasty and Healthy",
+        price: 15.99,
+        oldPrice: 20.99
+    },
+    {
+        image: "images/background3.jpg",
+        title: "Tasty and Healthy",
+        price: 15.99,
+        oldPrice: 20.99
+    },
+    {
+        image: "images/background3.jpg",
+        title: "Tasty and Healthy",
+        price: 15.99,
+        oldPrice: 20.99
+    },
+    {
+        image: "images/background3.jpg",
+        title: "Tasty and Healthy",
+        price: 15.99,
+        oldPrice: 20.99
+    },
+    {
+        image: "images/background3.jpg",
+        title: "Tasty and Healthy",
+        price: 15.99,
+        oldPrice: 20.99
+    },
+    {
+        image: "images/background3.jpg",
+        title: "Tasty and Healthy",
+        price: 15.99,
+        oldPrice: 20.99
+    },
+    {
+        image: "images/background3.jpg",
+        title: "Tasty and Healthy",
+        price: 15.99,
+        oldPrice: 20.99
+    }
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  if(location.pathname=="/menu.html") renderProducts();  
+    updateCartUI();
+});
+
+function renderProducts() {
+    const container = document.querySelector(".box-container");
+    
+    products.forEach((product, index) => {
+        const productHTML = `
+            <div class="box">
+                <img src="${product.image}" alt="">
+                <h3>${product.title}</h3>
+                <div class="price">$${product.price} <span>$${product.oldPrice}</span></div>
+                <a href="#" class="btn" onclick="addToCart(${index})">Add to cart</a>
+            </div>
+        `;
+        container.innerHTML += productHTML;
+    });
+}
+
+function addToCart(index) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(products[index]);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartUI();
+    alert("Product added to cart!");
+}
+
+function updateCartUI() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cartContainer = document.querySelector(".cart-items-container");
+    if (!cartContainer) {
+        cartContainer = document.createElement("div");
+        cartContainer.classList.add("cart-container");
+        document.body.appendChild(cartContainer);
+    }
+    cartContainer.innerHTML = "<h2>Cart</h2>";
+    cart.forEach((item, index) => {
+        cartContainer.innerHTML += `
+            <div class="cart-item">
+                <h4>${item.title}</h4>
+                <p>$${item.price}</p>
+                <button onclick="removeFromCart(${index})">Remove</button>
+            </div>
+        `;
+    });
+}
+
+function removeFromCart(index) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartUI();
+}
+
+
