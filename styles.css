@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    font-family: "Kurale", serif;
+    background-color: #7ABA78;
+    background-image: url(https://thumbs.dreamstime.com/b/vintage-kitchen-tools-pattern-cooking-seamless-kitchenware-equipment-light-blue-background-51644206.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+nav {
+    background-color: #578FCA;
+    padding: 10px ;
+    text-align: center;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.nav-right {
+    display: flex;
+    justify-content: end;
+    flex-grow: 1;
+    gap: 50px;
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.nav-right a {
+    color: #A1E3F9;
+    text-decoration: none;
+}
+
+.nav-left {
+    display: flex;
+    flex-grow: 1;
+    gap: 50px;
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+.nav-left a {
+    color: #A1E3F9;
+    text-decoration: none;
+}
+
+.products {
+    text-align: center;
+    padding: 20px;
+    
+}
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 70px;
+}
+
+.product {
+    background-color: #D1F8EF;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+    border: 2px solid #3674B5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.product-info h3 {
+    font-size: 16px;
+    flex: 1;
+    text-align: left;
+}
+
+.product-info .price {
+    font-size: 14px;
+}
+
+.product button {
+    background-color: #578FCA;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100px;
+    margin-top: 10px;
+}
+
+.anim1 {
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+}
+
+.anim1::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background: #A1E3F9;
+    transition: width .2s;
+    border-radius: 20px;
+}
+
+.anim1:hover:after {
+    width: 100%;
+}
+
+.anim2 {
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+}
+
+.anim2::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    background: #A1E3F9;
+    transition: width .2s;
+    border-radius: 20px;
+
+}
+
+.anim2:hover:after {
+    width: 100%;
+}
+
+.cart {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #3674B5;
+}
+
+.cart table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cart th {
+    background: #578FCA;
+    color: white;
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+.cart td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+}
+
+.cart tr {
+    border: 2px solid #3674B5;
+    background: white;
+}
+
+.cart td button {
+    background: #578FCA;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.2s ease-in-out;
+}
+
+.cart td button:hover {
+    background: #2F6EB1;
+}
+
+#clear-cart {
+    display: block;
+    width: 100%;
+    background: #D9534F;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: 0.2s ease-in-out;
+}
+
+#clear-cart:hover {
+    background: #B52B27;
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 1.4em;
+    padding: 15px;
+    font-weight: bold;
+    background: #FFF3CD;
+    border-top: 2px solid #3674B5;
+    margin-top: 10px;
+}
+
+#confirm-order {
+    display: block;
+    width: 100%;
+    background: #28A745;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+#confirm-order:hover {
+    background: #218838;
+}

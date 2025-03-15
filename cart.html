@@ -1,0 +1,52 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="cart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kurale&family=Lancelot&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <img src="./culinary.PNG" width="60px" height="60px" />
+        <div class="nav-left">
+            <a href="./Atestat.html">Home</a>
+            <a href="./recipes.html">Recipes</a>
+            <a href="./cart.html">Cart (<span id="cart-count">0</span>)</a>
+        </div>
+
+    </nav>
+
+    <section class="cart">
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+            
+            </tbody>
+        </table>
+        
+        <div class="cart-total">
+            <strong>Total: $<span id="total-amount">0.00</span></strong>
+        </div>
+    
+        <button id="clear-cart">Clear Cart</button>
+        <button id="confirm-order">Confirm Order</button>
+    </section>
+    
+
+</body>
+</html>

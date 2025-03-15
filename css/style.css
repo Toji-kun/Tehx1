@@ -193,8 +193,6 @@ section{
 
 .header .search-form.active{  
     transform: scaleY(1);
-    border-radius: 500px;
-    border-top-left-radius: 50%;
 }
 
 .header .search-form input{
