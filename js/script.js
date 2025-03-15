@@ -99,16 +99,18 @@ const products = [
     {
         id:1,
         quantity: 0,
-        image: "images/background3.jpg",
-        title: "Tasty and Healthy",
-        price: 15.99,
-        oldPrice: 20.99
+        image: "images/arm.jpeg",
+        title: "Arm Bionic",
+        description: "A modern, functional prosthetic with articulated fingers.",
+        shortDescription: "High-tech prosthetic arm with flexible movement.",
+        price: 1299.99,
+        oldPrice: 1599.99
     },
     {
         id:2,
         quantity: 0,
-        image: "images/background3.jpg",
-        title: "Tasty and Healthy",
+        image: "images/ECG-monitor.jpeg",
+        title: "ECG monitor",
         price: 15.99,
         oldPrice: 20.99
     },
@@ -177,6 +179,23 @@ const products = [
         oldPrice: 20.99
     }
 ];
+
+function renderProducts() {
+    const container = document.querySelector(".box-container");
+    
+    products.forEach((product, index) => {
+        const productHTML = `
+            <div class="box">
+                <img src="${product.image}" alt="${product.title}">
+                <h3>${product.title}</h3>
+                <p>${product.shortDescription}</p> <!-- Descriere scurtă -->
+                <div class="price">$${product.price} <span>$${product.oldPrice}</span></div>
+                <a href="#" class="btn" onclick="addToCart(${index})">Add to cart</a>
+            </div>
+        `;
+        container.innerHTML += productHTML;
+    });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
 
