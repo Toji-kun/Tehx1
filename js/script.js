@@ -443,3 +443,5 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById(`${category.replace(/\s+/g, '-')}-button`).addEventListener("click", () => getNewAdvice(category));
     });
 });
+
+

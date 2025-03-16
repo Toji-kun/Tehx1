@@ -19,6 +19,9 @@
     
 }
 
+
+
+
 html{
     font-size: 62.5%;
     overflow: auto;
@@ -89,6 +92,7 @@ input {
 
 
 
+
 body{
     background: var(--bg);
 }
@@ -146,6 +150,7 @@ section{
     image-resolution: 100%;
     align-items: center;
     font-size: large;
+    object-fit: contain;
 }
 
 .header .logo img{
@@ -348,7 +353,7 @@ section{
     border: var(--border);
 }
 .menu .box-container .box:hover .btn {
-    background-color: #222; /* Culoare neagră la hover */
+    background-color: url(../images/background12.jpg); /* Culoare neagră la hover */
     color: #fff; /* Text alb la hover */
 }
 
@@ -868,7 +873,7 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
+button :hover {
     background-color: #1e221e;
 }
 
