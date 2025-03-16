@@ -532,15 +532,40 @@ section{
 .btn {
     display: inline-block;
     margin-top: 1rem;
-    padding: 0.7rem 1.5rem;
+    padding: .3rem 1.5rem;
     background: #fff; /* Culoare albă */
     color: #222; /* Text negru */
-    text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 8px;
+    text-decoration:transparent;
+    font-size: 25px;
+    border-radius: 10px;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+}
+
+.caca{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .3rem 1.5rem;
+    background: #fff; /* Culoare albă */
+    color: #222; /* Text negru */
+    text-decoration:transparent;
+    font-size: 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 550px; /* Setează o lățime fixă mai mică */
+    text-align: center; /* Asigură că textul rămâne centrat */
+   
+}
+
+.caca:hover{
+    background: #222; /* Culoare neagră la hover */
+    color: #fff; /* Text alb */
+    transform: scale(1.1); /* Mărire la hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
@@ -566,8 +591,9 @@ section{
 .review .box-container .box p{
     font-size: 1.5rem;
     line-height: 1.8;
-    color: #ccc;
+    color: #fdfdfd;
     padding: 2rem 0;
+    text-decoration-color: #faf7f7;
 }
 
 .review .box-container .box .user{
@@ -580,7 +606,7 @@ section{
 .review .box-container .box h3{
     padding: 1rem 0;
     font-size: 2rem;
-    color: #fff;
+
 }
 
 .review .box-container .box .stars i{
@@ -595,8 +621,23 @@ section{
     height: 30rem;
 }
 
+.review .box-container .box:hover {
+    background: #ffffff; /* Schimbă fundalul */
+    color: #000000; /* Schimbă culoarea textului */
+}
 
+.review .box-container .box:hover p {
+    color: #0c0a0a; /* Schimbă culoarea textului */
+    text-decoration-color: #000000; 
+}
 
+.review .box-container .box:hover h3 {
+    color: #000000; /* Inversează culoarea titlului */
+}
+
+.review .box-container .box:hover .stars i {
+    color: #cfe410; /* Schimbă culoarea stelelor */
+}
 
 
 
@@ -759,7 +800,77 @@ section{
     color: var(--main-color);
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+.caiet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px; /* Spațiu mai mare între casete */
+    padding: 120px 20px 20px; /* Mai mult spațiu față de navbar */
+    width: 90%;
+    max-width: 1200px;
+    margin-left: 150px;
+}
+
+.advice-box {
+    background: #3b3b3b;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    height: 420px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.advice-box h2{
+    width: 300px;
+    height: 30px;
+    text-decoration: wavy;
+    font-size: 20px
+}
+.advice-box:hover {
+    transform: scale(1.05);
+}
+
+.advice-box p {
+    font-size: 18px; /* Mărește fontul pentru claritate */
+    line-height: 1.6;
+    padding: 10px;
+}
+
+img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #7aba78;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1e221e;
+}
 
 
 

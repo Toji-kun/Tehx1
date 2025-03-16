@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            background-color: #f6e9b2;
+        }
+        .search-container {
+            position: relative;
+            width: 300px;
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #0a6847;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            border: 1px solid #ccc;
+            border-top: none;
+            max-height: 150px;
+            overflow-y: auto;
+            display: none;
+        }
+        .suggestions div {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .suggestions div:hover {
+            background-color: #f3ca52;
+        }
+        .product-display {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #0a6847;
+            border-radius: 5px;
+            background: white;
+            width: 80%;
+            max-width: 600px;
+            display: none;
+            text-align: center;
+        }
+        .product-display img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search...">
+        <div class="suggestions" id="suggestions"></div>
+    </div>
+    
+    <section class="products">
+        <div class="product-display" id="product-display"></div>
+    </section>
+
+    <script>
+        const products = [
+            { name: "Bionic Arm", description: "A modern, functional prosthetic with articulated fingers.", image: "knife.jpg" },
+            { name: "ECG Monitor", description: "A compact device that connects to a smartphone for real-time heart monitoring.", image: "cutting_board.jpg" },
+            { name: "Automated Pill Dispenser", description: "A modern device with multiple compartments and a digital screen for dosage information.", image: "frying_pan.jpg" },
+            { name: "Smart Inhaler", description: "A compact inhaler with a small screen tracking medication usage.", image: "knife.jpg" },
+            { name: "Hearing Aid", description: "A compact, affordable hearing aid for accessible hearing assistance.", image: "cutting_board.jpg" },
+            { name: "Laparoscopic Surgical Instrument", description: "A sleek, low-cost tool for minimally invasive surgery.", image: "frying_pan.jpg" },
+            { name: "Modern Portable Nebulizer", description: "compact respiratory device designed to convert liquid medication into a fine mist for inhalation, commonly used for treating asthma, COPD, and other respiratory conditions.", image: "knife.jpg" },
+            { name: "Reusable Insulin Pen", description: "A sleek insulin delivery device with a digital dose display.", image: "cutting_board.jpg" },
+            { name: "Manual Stethoscope", description: "A traditional acoustic stethoscope for listening to heart and lung sounds.", image: "frying_pan.jpg" },
+            { name: "Reflex Hammer", description: "A rubber-headed medical tool used to test deep tendon reflexes.", image: "knife.jpg" },
+            { name: "Smart Pill", description: " A high-tech ingestible capsule containing sensors and electronics for health monitoring and drug delivery.", image: "cutting_board.jpg" },
+            { name: "Wireless Pacemaker", description: "A compact, leadless device designed for minimally invasive heart rhythm management.", image: "frying_pan.jpg" },
+        ];
+
+        document.getElementById("search").addEventListener("keyup", searchProducts);
+        
+        function searchProducts() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let suggestionBox = document.getElementById("suggestions");
+            suggestionBox.innerHTML = "";
+            
+            if (input === "") {
+                suggestionBox.style.display = "none";
+                return;
+            }
+            
+            let filtered = products.filter(item => item.name.toLowerCase().includes(input));
+            
+            if (filtered.length > 0) {
+                suggestionBox.style.display = "block";
+                filtered.forEach(item => {
+                    let div = document.createElement("div");
+                    div.innerText = item.name;
+                    div.onclick = function() {
+                        document.getElementById("search").value = item.name;
+                        suggestionBox.style.display = "none";
+                        displayProduct(item);
+                    };
+                    suggestionBox.appendChild(div);
+                });
+            } else {
+                suggestionBox.style.display = "none";
+            }
+        }
+
+        function displayProduct(product) {
+            let productDisplay = document.getElementById("product-display");
+            productDisplay.innerHTML = `
+                <h2>${product.name}</h2>
+                <img src="${product.image}" alt="${product.name}">
+                <p>${product.description}</p>
+            `;
+            productDisplay.style.display = "block";
+        }
+    </script>
+</body>
+</html>

@@ -54,7 +54,7 @@ function sendMessage(event) {
         }, 1000);
     }
 }
-const API_KEY = ""; // Nu lăsa cheia API publică!
+const API_KEY = "AIzaSyAZqa8SymhYGehLRyJYqvYl5s3kHiKo3IA"; // Nu lăsa cheia API publică!
 const model = "gemini-1.5-flash"; // Poți schimba modelul dacă vrei
 
 async function sendMessage(event) {
@@ -394,3 +394,52 @@ function updateCartUI() {
 
     cartContainer.appendChild(checkoutButton);
 }
+
+
+const advices = {
+    "Physical Health": [
+        { text: "Drink at least 2 liters of water daily to stay hydrated.", image: "imagies/water.jpeg" },
+        { text: "Exercise for at least 30 minutes a day to boost your cardiovascular system.", image: "imagies/exercice.jpeg" },
+        { text: "Stretch before and after workouts to prevent injuries and improve flexibility.", image: "imagies/stretch.jpeg" },
+        { text: "Take short breaks during long sitting periods to reduce strain on your spine.", image: "imagies/breaks.jpeg" },
+        { text: "Get at least 7-8 hours of quality sleep to allow your body to recover.", image: "imagies/sleep.jpg" },
+        { text: "Spend at least 15 minutes in the sun daily to get enough Vitamin D.", image: "imagies/sunlight.jpg" }
+    ],
+    "Mental Well-being": [
+        { text: "Practice mindfulness or meditation for at least 10 minutes a day to lower stress levels.", image: "imagies/meditation.jpeg" },
+        { text: "Limit social media use to avoid mental fatigue and improve focus.", image: "imagies/social_media.jpeg" },
+        { text: "Engage in hobbies that make you happy and reduce anxiety.", image: "imagies/hobbies.jpeg" },
+        { text: "Write down three things you're grateful for each day to boost positivity.", image: "imagies/gratitude.jpeg" },
+        { text: "Spend time in nature to improve mood and mental clarity.", image: "imagies/nature.jpeg" },
+        { text: "Connect with family or friends regularly to maintain emotional well-being.", image: "imagies/friends.jpeg" }
+    ],
+    "Nutrition and Diet": [
+        { text: "Eat a balanced diet rich in fruits, vegetables, and whole grains for optimal health.", image: "imagies/healthy_food.jpeg" },
+        { text: "Reduce processed sugar intake to maintain stable blood sugar levels.", image: "imagies/sugar.jpeg" },
+        { text: "Include protein in every meal to support muscle growth and repair.", image: "imagies/protein.jpeg" },
+        { text: "Avoid skipping breakfast to maintain energy levels throughout the day.", image: "imagies/breakfast.jpeg" },
+        { text: "Incorporate healthy fats like nuts, seeds, and olive oil into your diet.", image: "imagies/healthy_fats.jpeg" },
+        { text: "Drink green tea or herbal teas for their antioxidants and health benefits.", image: "imagies/tea.jpeg" }
+    ]
+};
+
+function getNewAdvice(category) {
+    const adviceTextElement = document.getElementById(`${category.replace(/\s+/g, '-')}-adviceText`);
+    const adviceImageElement = document.getElementById(`${category.replace(/\s+/g, '-')}-adviceImage`);
+
+    let newAdvice;
+    do {
+        newAdvice = advices[category][Math.floor(Math.random() * advices[category].length)];
+    } while (adviceTextElement.innerText === newAdvice.text);
+
+    adviceTextElement.innerText = newAdvice.text;
+    adviceImageElement.src = newAdvice.image;
+    adviceImageElement.alt = newAdvice.text;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    Object.keys(advices).forEach(category => {
+        getNewAdvice(category);
+        document.getElementById(`${category.replace(/\s+/g, '-')}-button`).addEventListener("click", () => getNewAdvice(category));
+    });
+});
