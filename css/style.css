@@ -285,9 +285,10 @@ section{
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background:url(https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHkyNzVtOXdtcG43ZXRybjFjbzZuYjJ3aGZ1ZXdkZzhqeXFuZHM5dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VGK2WUT3amXjG/giphy.gif) no-repeat;
+    background:url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3kydDViaWUwb2V1cTIxdzFpaDExa29ucmx1dTJzNmpvOGc1ZGk3diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUOxfjsW9fWPqEWouI/giphy.gif) no-repeat;
     background-size: cover;
     background-position: center;
+    margin-top: 90px;
 }
 
 .home .content{
@@ -297,15 +298,15 @@ section{
 .home .content h3{
     font-size: 6rem;
     text-transform: uppercase;
-    color: #fff;
+    color: #000000;
 }
 
 .home .content p{
     font-size: 2rem;
-    font-weight: lighter;
+    font-weight:300;
     line-height: 1.8;
     padding: 1rem 0;
-    color: #eee;
+    color: #000000;
 }
 
 .about .row{

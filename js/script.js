@@ -99,90 +99,90 @@ const products = [
     {
         id:1,
         quantity: 0,
-        image: "images/arm.jpeg",
-        title: "Bionic Arm",
+        image: "images/pandorei.jpeg",
+        title: "Box of Pandora",
         description: "A modern, functional prosthetic with articulated fingers.",
         shortDescription: "High-tech prosthetic arm with flexible movement.",
-        price: 1299.99,
-        oldPrice: 1599.99
+        price: 59.99,
+        oldPrice: 99.99
     },
     {
         id:2,
         quantity: 0,
-        image: "images/ECG-monitor.jpeg",
-        title: "ECG Monitor",
+        image: "images/paispic.jpeg",
+        title: "Box Paispe",
         price: 399.99,
         oldPrice: 499.99
     },
     {
         id:3,
         quantity: 0,
-        image: "images/Pill dispenser.jpeg",
-        title: "Pill Dispenser",
+        image: "images/infinity1.png",
+        title: "Infinity Box",
         price: 99.99,
         oldPrice: 129.99
     },
     {
         id:4,
         quantity: 0,
-        image: "images/aeorosol.jpeg",
-        title: "Smart Inhaler",
+        image: "images/box2.jpeg",
+        title: "Epic Drop",
         price: 59.99,
         oldPrice: 89.99
     },
     {
         id:5,
         quantity: 0,
-        image: "images/auditiv.jpeg",
-        title: "Hearing Aid",
-        price: 159.99,
-        oldPrice: 189.99
+        image: "images/box10.jpeg",
+        title: "Golden Mistery",
+        price: 59.99,
+        oldPrice: 89.99
     },
     {
         id:6,
         quantity: 0,
-        image: "images/siringa.jpeg",
-        title: "Laparoscopic Surgical Instrument",
+        image: "images/box9.jpeg",
+        title: "The Joker Box",
         price: 79.99,
         oldPrice: 129.99
     },
     {
         id:7,
         quantity: 0,
-        image: "images/vape.jpeg",
-        title: "Modern Portable Nebulizer",
+        image: "images/box8.jpeg",
+        title: "Lucky Box",
         price: 39.99,
-        oldPrice: 54.99
+        oldPrice: 54.99,
     },
     {
         id:8,
         quantity: 0,
-        image: "images/pen.jpeg",
-        title: "Reusable Insulin Pen",
-        price: 299.99,
-        oldPrice: 349.99
+        image: "images/box3.jpeg",
+        title: "Mistery Box:The Unknow",
+        price: 99.99,
+        oldPrice: 149.99
     },
     {
         id:9,
         quantity: 0,
-        image: "images/scop.jpeg",
-        title: "Manual Stethoscope",
-        price: 20.99,
-        oldPrice: 24.99
+        image: "images/box4.jpeg",
+        title: "Nobel Box",
+        price: 189.99,
+        oldPrice: 200.99
     },
     {
         id:10,
         quantity: 0,
-        image: "images/ciocan.jpeg",
-        title: "Reflex Hammer",
-        price: 15.99,
-        oldPrice: 20.99
+        image: "images/box5.jpeg",
+        title: "Subway Surf Box",
+        price: 69.99,
+        oldPrice: 90.99
     },
     {
         id:11,
         quantity: 0,
-        image: "images/pill.jpeg",
-        title: "Smart Pill",
+        image: "images/box6.jpeg",
+        title: "Innovation Box",
         price: 69.99,
         oldPrice: 89.99
     },
@@ -190,10 +190,10 @@ const products = [
     {
         id:12,
         quantity: 0,
-        image: "images/heart.jpeg",
-        title: "Wireless Pacemaker",
-        price: 199.99,
-        oldPrice: 229.99
+        image: "images/box7.jpeg",
+        title: "THE Mistery Box",
+        price: 99.99,
+        oldPrice: 119.99
     },
 ];
 
