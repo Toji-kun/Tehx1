@@ -308,6 +308,11 @@ section{
     padding: 1rem 0;
     color: #000000;
 }
+.row{
+    justify-content: center;
+    margin-bottom: 130px;
+    margin-top: 90px;
+}
 
 .about .row{
     display: flex;
